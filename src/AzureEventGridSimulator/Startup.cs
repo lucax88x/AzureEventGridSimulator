@@ -59,8 +59,7 @@ namespace AzureEventGridSimulator
         public ValidationIpAddress()
         {
             var hostName = Dns.GetHostName();
-            _ipAddress = Dns.GetHostAddresses(hostName).First(ip => ip.AddressFamily == AddressFamily.InterNetwork &&
-                                                                    !IPAddress.IsLoopback(ip)).ToString();
+            _ipAddress = Dns.GetHostAddresses(hostName).First(ip => ip.AddressFamily == AddressFamily.InterNetwork).ToString();
         }
 
         public override string ToString()
